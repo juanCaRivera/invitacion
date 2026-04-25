@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Digital</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f8f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .invitation-container {
+      max-width: 1080px; /* límite para pantallas grandes */
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .invitation-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Texto superpuesto opcional */
+    .invitation-text {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    /* Ajustes para móviles */
+    @media (max-width: 768px) {
+      .invitation-text {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="invitation-container">
+    <!-- Imagen adaptable -->
+    <img src="invitacion.webp" alt="Invitación Boda" class="invitation-image">
+
+    <!-- Texto opcional -->
+    <div class="invitation-text">
+      Emanuel & Francis<br>
+      20 de Junio, 2026
+    </div>
+  </div>
+</body>
+</html>
