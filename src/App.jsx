@@ -13,7 +13,6 @@ import LoveNote from './components/LoveNote';
 import Confirmation from './components/Confirmation';
 import Closing from './components/Closing';
 import confetti from 'canvas-confetti';
-import bgOlivo from './assets/fondo2.png';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,19 +21,14 @@ function App() {
     confetti({
       particleCount: 150,
       spread: 90,
-      origin: { y: 0.4 } // Shot from slightly above center to cascade down
+      origin: { y: 0.4 }
     });
     setIsOpen(true);
   };
 
   useEffect(() => {
-    if (!isOpen) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.backgroundColor = '#54582f';
-    } else {
-      document.body.style.overflow = 'auto';
-      document.body.style.backgroundColor = '#ffffff';
-    }
+    document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+    document.body.style.backgroundColor = '#ffffff'; // ✅ blanco siempre
   }, [isOpen]);
 
   return (
@@ -42,31 +36,19 @@ function App() {
       {!isOpen && <Intro onOpen={handleOpen} />}
 
       {isOpen && (
-        <main className="relative w-full overflow-x-hidden">
-          {/* Global Background Layer */}
-          <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
-            <img 
-              src={bgOlivo} 
-              alt="" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-white/30" />
-          </div>
-
-          <div className="relative z-10">
-            <Hero />
-            <BibleText />
-            <Invitation />
-            <Countdown />
-            <Ceremony />
-            <Reception />
-            <Timeline />
-            <Gifts />
-            <Recommendations />
-            <LoveNote />
-            <Confirmation />
-            <Closing />
-          </div>
+        <main className="w-full overflow-x-hidden bg-white">
+          <Hero />
+          <BibleText />
+          <Invitation />
+          <Countdown />
+          <Ceremony />
+          <Reception />
+          <Timeline />
+          <Gifts />
+          <Recommendations />
+          <LoveNote />
+          <Confirmation />
+          <Closing />
         </main>
       )}
     </>

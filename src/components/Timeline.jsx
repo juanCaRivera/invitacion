@@ -79,8 +79,8 @@ export default function Timeline() {
                   {/* 🔹 CONTENIDO */}
                   <div
                     className={`w-full md:w-1/2 ${isLeft
-                        ? 'md:pr-16 text-right'
-                        : 'md:order-2 md:pl-16 text-left'
+                      ? 'md:pr-16 text-right'
+                      : 'md:order-2 md:pl-16 text-left'
                       }`}
                   >
                     <div className="max-w-md mx-auto md:mx-0">
