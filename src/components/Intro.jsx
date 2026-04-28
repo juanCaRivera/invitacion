@@ -11,7 +11,7 @@ export default function Intro({ onOpen }) {
         <div className="bulb"></div>
         <div className="bulb"></div>
       </div>
-      <img src="/src/assets/boda.png" id="sobre" className="envelope-img" alt="Sobre de invitación" />
+      <img src="/public/boda.png" id="sobre" className="envelope-img" alt="Sobre de invitación" />
       <div className="open-btn" onClick={onOpen} aria-label="Abrir invitación de boda">Abrir invitación</div>
     </section>
   );
