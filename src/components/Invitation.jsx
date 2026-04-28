@@ -14,12 +14,22 @@ export default function Invitation() {
       >
         {/* Imagen de Anillos (Control Estricto de Tamaño) */}
         <div className="flex justify-center mb-10">
-          <div className="w-24 md:w-32">
+          <div className="group relative inline-flex w-6 md:w-8">
             <img
               src={ringsImg}
               alt="Anillos de boda"
-              className="w-full h-auto block object-contain"
-              style={{ maxWidth: '100%', display: 'block' }}
+              className="w-full h-auto block object-contain opacity-80 transition-all duration-300 group-hover:opacity-100 group-focus-within:opacity-100"
+              style={{ width: '100px', maxWidth: '100%', display: 'block' }}
+            />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-within:opacity-100"
+              style={{
+                boxShadow:
+                  '0 0 10px 2px rgba(184,147,77,0.75), 0 0 18px 6px rgba(184,147,77,0.45)',
+                border: '1px solid rgba(184,147,77,0.75)',
+                borderRadius: '9999px',
+              }}
             />
           </div>
         </div>
