@@ -34,6 +34,18 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Enlaces tipo invitación (mapa): sin subrayado ni color de enlace por defecto */
+a.invite-map-link,
+a.invite-map-link:visited,
+a.invite-map-link:hover,
+a.invite-map-link:active,
+a.invite-map-link:focus,
+a.invite-map-link:focus-visible {
+  text-decoration: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 /* Standard Layout Classes */
 .section-layout {
   padding-top: var(--section-py-mobile);
@@ -97,23 +109,6 @@ h4 {
 }
 
 /* Component Styling */
-.glass-card {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(84, 88, 47, 0.1);
-  border-radius: 24px;
-  padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--color-gold-light);
-  box-shadow: 0 20px 40px rgba(84, 88, 47, 0.1);
-}
-
 .btn-primary {
   display: inline-flex;
   align-items: center;

@@ -60,11 +60,7 @@ export default function Hero() {
         }
 
         .hero-panel {
-          background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.2),
-            rgba(0, 0, 0, 0.35)
-          );
+          background:
           border: 1px solid rgba(255, 255, 255, 0.2);
           backdrop-filter: blur(2px);
           border-radius: 1rem;

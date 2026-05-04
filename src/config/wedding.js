@@ -22,7 +22,7 @@ export const WEDDING_DATA = {
     message: "Su presencia es nuestro mejor regalo. Si desea colaborar, tendremos un cofre para sobres en el lugar del evento."
   },
   confirmation: {
-    whatsappNumber: "1234567890", // Placeholder
+    whatsappNumber: "86622778", // Placeholder
     message: "¡Hola! Confirmo mi asistencia a la boda de Francis y Emanuel."
   }
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Info } from 'lucide-react';
+import recomendaciones from '../assets/recomendaciones.jpg';
 
 export default function Recommendations() {
   const items = [
@@ -18,11 +19,16 @@ export default function Recommendations() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 1 }}
-          className="glass-card text-center"
+          className="text-center"
         >
-          <div className="w-16 h-16 rounded-full bg-[#54582f]/5 flex items-center justify-center mx-auto mb-8">
-            <Info size={32} className="text-[#b8934d]" strokeWidth={1.5} />
-          </div>
+
+          <div className="flex justify-center items-center mb-6">
+          <img
+  src={recomendaciones}
+  alt=""
+  className="mb-6 mx-auto block h-[110px] w-auto object-contain select-none"
+/>
+</div>
 
           <h3 className="text-4xl mb-10 text-[#b8934d]">Recomendaciones</h3>
 
