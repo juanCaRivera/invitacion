@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Info } from 'lucide-react';
 import recomendaciones from '../assets/recomendaciones.jpg';
+import { LedImageWrap } from './Timeline';
 
 export default function Recommendations() {
   const items = [
@@ -22,13 +22,15 @@ export default function Recommendations() {
           className="text-center"
         >
 
-          <div className="flex justify-center items-center mb-6">
-          <img
-  src={recomendaciones}
-  alt=""
-  className="mb-6 mx-auto block h-[110px] w-auto object-contain select-none"
-/>
-</div>
+          <div className="mb-6 flex items-center justify-center">
+            <LedImageWrap className="inline-block">
+              <img
+                src={recomendaciones}
+                alt=""
+                className="mx-auto block h-[110px] w-auto object-contain select-none"
+              />
+            </LedImageWrap>
+          </div>
 
           <h3 className="text-4xl mb-10 text-[#b8934d]">Recomendaciones</h3>
 

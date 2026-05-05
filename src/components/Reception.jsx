@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin } from 'lucide-react';
 import { WEDDING_DATA } from '../config/wedding';
+import { InviteMapLink } from './Timeline';
 import recepcion from '../assets/recepcion.jpg';
+import { LedImageWrap } from './Timeline';
 
 
 export default function Reception() {
@@ -21,11 +22,13 @@ export default function Reception() {
             <Hotel size={40} className="text-[#b8934d]" strokeWidth={1.5} />
           </div>*/}
 
-          <img
-  src={recepcion}
-  alt=""
-  className="mb-6 mx-auto block h-[110px] w-auto object-contain select-none"
-/>
+          <LedImageWrap className="mb-6 inline-block">
+            <img
+              src={recepcion}
+              alt=""
+              className="mx-auto block h-[110px] w-auto object-contain select-none"
+            />
+          </LedImageWrap>
 
           {/* Título */}
           <h3
@@ -49,22 +52,7 @@ export default function Reception() {
               Hora: {WEDDING_DATA.reception.time}
             </p>
 
-            <a
-              href={WEDDING_DATA.reception.locationUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="invite-map-link group mx-auto inline-flex max-w-full items-center gap-4 text-left no-underline outline-none transition-[opacity,color] duration-300 hover:opacity-[0.92] focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#b8934d]/35 focus-visible:ring-offset-0"
-            >
-              <span
-                aria-hidden
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#b8934d]/45 text-[#b8934d] transition-[border-color,background-color,color] duration-300 group-hover:border-[#b8934d] group-hover:bg-[#b8934d]/[0.08]"
-              >
-                <MapPin size={20} strokeWidth={1.5} />
-              </span>
-              <span className="min-w-0 text-[0.8125rem] font-normal uppercase leading-snug tracking-[0.2em] text-[#54582f]/90 transition-colors duration-300 group-hover:text-[#b8934d] md:text-sm md:tracking-[0.24em]">
-                Ver mapa
-              </span>
-            </a>
+            <InviteMapLink href={WEDDING_DATA.reception.locationUrl} className="mx-auto" />
           </div>
         </motion.div>
       </div>

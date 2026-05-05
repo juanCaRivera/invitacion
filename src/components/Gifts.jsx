@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Gift } from 'lucide-react';
 import regalos from '../assets/regalos3.jpg';
+import { LedImageWrap } from './Timeline';
 
 
 export default function Gifts() {
@@ -16,16 +16,29 @@ export default function Gifts() {
           className="text-center"
         >
 
-          <img
-  src={regalos}
-  alt=""
-  className="mb-6 mx-auto block h-[110px] w-auto object-contain select-none"
-/>
-          <h3 className="text-4xl mb-8 text-[#b8934d]">Regalos</h3>
-          
-          <p className="text-xl font-light text-[#54582f] leading-relaxed">
-            Su presencia es nuestro mejor regalo. Si desea colaborar, tendremos un cofre para sobres en el lugar del evento.
-          </p>
+          <LedImageWrap className="mb-6 inline-block">
+            <img
+              src={regalos}
+              alt=""
+              className="mx-auto block h-[110px] w-auto object-contain select-none"
+            />
+          </LedImageWrap>
+<h3 className="text-4xl mb-8 text-[#b8934d]">Regalos</h3>
+
+<p className="text-xl font-light text-[#54582f] leading-relaxed">
+  Su compañía en este día tan especial es el mejor regalo que podemos recibir.  
+  Sin embargo, si desean expresarnos un detalle adicional, hemos preparado algunas opciones:  
+</p>
+
+<ul className="list-disc pl-6 text-xl font-light text-[#54582f] leading-relaxed">
+  <li>Muestra de cariño</li>
+  <li>Lluvia de sobres</li>
+</ul>
+
+<p className="text-xl font-light text-[#54582f] leading-relaxed mt-4">
+  Lo más importante para nosotros es compartir este momento con ustedes y celebrar juntos el inicio de nuestra nueva etapa.
+</p>
+
         </motion.div>
       </div>
     </section>

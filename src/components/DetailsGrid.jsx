@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Church, Hotel, MapPin } from 'lucide-react';
+import { Church, Hotel } from 'lucide-react';
 import { WEDDING_DATA } from '../config/wedding';
+import InviteMapLink from './InviteMapLink';
 
 export default function DetailsGrid() {
   return (

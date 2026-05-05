@@ -46,6 +46,36 @@ a.invite-map-link:focus-visible {
   box-shadow: none;
 }
 
+@keyframes inviteImgLedGold {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(226, 199, 129, 0.78))
+      drop-shadow(0 0 12px rgba(184, 147, 77, 0.4))
+      drop-shadow(0 0 20px rgba(184, 147, 77, 0.18));
+  }
+  50% {
+    filter: drop-shadow(0 0 9px rgba(255, 228, 170, 0.92))
+      drop-shadow(0 0 18px rgba(226, 199, 129, 0.52))
+      drop-shadow(0 0 30px rgba(184, 147, 77, 0.28));
+  }
+}
+
+.invite-img-led-trigger {
+  cursor: pointer;
+  outline: none;
+}
+
+.invite-img-led-trigger:hover,
+.invite-img-led-trigger:active,
+.invite-img-led-trigger.invite-img-led-burst {
+  animation: inviteImgLedGold 2.4s ease-in-out infinite;
+}
+
+.invite-img-led-trigger:focus-visible {
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 2px rgba(184, 147, 77, 0.35);
+}
+
 /* Standard Layout Classes */
 .section-layout {
   padding-top: var(--section-py-mobile);

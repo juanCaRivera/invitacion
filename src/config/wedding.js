@@ -9,18 +9,17 @@ export const WEDDING_DATA = {
   },
   ceremony: {
     time: "5:00 PM",
-    place: "Parroquia Nuestra Señora de la Candelaria",
+    place: "Parroquia Nuestra Señora de Candelaria",
     locationUrl: "https://maps.google.com/?q=Parroquia+Nuestra+Senora+de+la+Candelaria"
   },
   reception: {
     time: "7:00 PM",
-    place: "Hotel Hexx",
+    place: "Hotel HEX",
     subPlace: "Salones: Madroño y Almendro",
     locationUrl: "https://maps.google.com/?q=Hotel+Hexx"
   },
   gifts: {
-    message: "Su presencia es nuestro mejor regalo. Si desea colaborar, tendremos un cofre para sobres en el lugar del evento."
-  },
+    message: "Su presencia es nuestro mayor regalo. Pero si desea tener un detalle, tendremos las siguientes opciones:    - Muestra de cariño    - LLuvia de sobres "},
   confirmation: {
     whatsappNumber: "86622778", // Placeholder
     message: "¡Hola! Confirmo mi asistencia a la boda de Francis y Emanuel."

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { WEDDING_DATA } from '../config/wedding';
 import novioImg from '../assets/novio.png';
 import olivoImg from '../assets/olivo.png';
+import { LedImageWrap } from './Timeline';
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -88,7 +89,6 @@ export default function BibleText() {
 
           <motion.span
             role="img"
-            tabIndex={0}
             aria-label="Icono decorativo"
             className="group relative mb-8 inline-flex h-5 w-5 items-center justify-center rounded-full outline-none"
             initial={{ opacity: 0, scale: 0.85 }}
@@ -96,12 +96,14 @@ export default function BibleText() {
             viewport={{ once: true }}
             transition={{ delay: 0.48, duration: 0.6, ease: EASE }}
           >
-            <img
-              src={novioImg}
-              alt=""
-              aria-hidden="true"
-              className="h-[100px] w-3 object-contain opacity-80 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
-            />
+            <LedImageWrap className="inline-flex items-center justify-center">
+              <img
+                src={novioImg}
+                alt=""
+                aria-hidden="true"
+                className="h-[100px] w-3 object-contain opacity-80 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+              />
+            </LedImageWrap>
             <span
               className="pointer-events-none absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
               style={{
