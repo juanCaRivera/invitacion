@@ -19,9 +19,10 @@ export const WEDDING_DATA = {
     locationUrl: "https://maps.google.com/?q=Hotel+Hexx"
   },
   gifts: {
-    message: "Su presencia es nuestro mayor regalo. Pero si desea tener un detalle, tendremos las siguientes opciones:    - Muestra de cariño    - LLuvia de sobres "},
+    message: "Su presencia es nuestro mayor regalo. Pero si desea tener un detalle, tendremos las siguientes opciones:    - Muestra de cariño    - LLuvia de sobres "
+  },
   confirmation: {
-    whatsappNumber: "86622778", // Placeholder
+    whatsappNumber: "77770190", // Placeholder
     message: "¡Hola! Confirmo mi asistencia a la boda de Francis y Emanuel."
   }
 };

@@ -1,11 +1,10 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { WEDDING_DATA } from '../config/wedding';
+import { EASE } from './shared/AnimationConfig';
+import DecoratedImage from './shared/DecoratedImage';
 import novioImg from '../assets/novio.png';
 import olivoImg from '../assets/olivo.png';
-import { LedImageWrap } from './Timeline';
-
-const EASE = [0.22, 1, 0.36, 1];
 
 export default function BibleText() {
   return (
@@ -14,6 +13,7 @@ export default function BibleText() {
         className="container-narrow"
         style={{ paddingLeft: 0, paddingRight: 0 }}
       >
+        {/* Olive branch decoration */}
         <div className="flex w-full justify-center">
           <motion.img
             src={olivoImg}
@@ -37,6 +37,7 @@ export default function BibleText() {
           transition={{ duration: 0.9, ease: EASE }}
           className="mx-auto max-w-4xl text-center flex flex-col items-center py-10 md:py-14"
         >
+          {/* SVG ornament */}
           <motion.div
             className="mb-7 flex justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -58,21 +59,19 @@ export default function BibleText() {
             </svg>
           </motion.div>
 
+          {/* Bible verse */}
           <motion.p
             className="text-2xl md:text-3xl font-normal italic leading-relaxed md:leading-[1.85] mb-8 text-[var(--color-text)]"
-            style={{
-              textWrap: 'balance',
-              fontStyle: 'italic',
-              fontFamily: 'var(--font-title)',
-            }}
+            style={{ textWrap: 'balance', fontFamily: 'var(--font-title)' }}
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.9, ease: EASE }}
           >
-            "{WEDDING_DATA.bibleVerse.text}"
+            &ldquo;{WEDDING_DATA.bibleVerse.text}&rdquo;
           </motion.p>
 
+          {/* Reference with decorative lines */}
           <motion.div
             className="mb-9 inline-flex items-center gap-3 md:gap-4"
             initial={{ opacity: 0 }}
@@ -87,33 +86,24 @@ export default function BibleText() {
             <span className="h-px w-8 md:w-10 bg-[var(--color-gold-light)]/80" />
           </motion.div>
 
-          <motion.span
-            role="img"
-            aria-label="Icono decorativo"
-            className="group relative mb-8 inline-flex h-5 w-5 items-center justify-center rounded-full outline-none"
+          {/* Decorative icon */}
+          <motion.div
+            className="mb-8"
             initial={{ opacity: 0, scale: 0.85 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.48, duration: 0.6, ease: EASE }}
           >
-            <LedImageWrap className="inline-flex items-center justify-center">
+            <DecoratedImage>
               <img
                 src={novioImg}
-                alt=""
-                aria-hidden="true"
-                className="h-[100px] w-3 object-contain opacity-80 transition-all duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+                alt="Icono decorativo"
+                className="h-[100px] w-auto object-contain opacity-90"
               />
-            </LedImageWrap>
-            <span
-              className="pointer-events-none absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
-              style={{
-                boxShadow:
-                  '0 0 10px 2px rgba(184,147,77,0.75), 0 0 18px 6px rgba(184,147,77,0.45)',
-                border: '1px solid rgba(184,147,77,0.75)',
-              }}
-            />
-          </motion.span>
+            </DecoratedImage>
+          </motion.div>
 
+          {/* Blessing text */}
           <motion.p
             className="text-base md:text-lg font-light italic leading-relaxed text-[var(--color-text)] px-2"
             style={{ textWrap: 'balance', fontFamily: 'var(--font-title)' }}
@@ -122,7 +112,7 @@ export default function BibleText() {
             viewport={{ once: true }}
             transition={{ delay: 0.55, duration: 0.8, ease: EASE }}
           >
-            Con la bendicion de Dios y nuestros queridos padres
+            Con la bendición de Dios y nuestros queridos padres
           </motion.p>
         </motion.div>
       </div>

@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCountdown } from '../hooks/useCountdown';
 import { WEDDING_DATA } from '../config/wedding';
 
-// 🔥 Dígito refinado (compacto + elegante)
 const Digit = ({ digit }) => (
   <div className="relative w-[22px] md:w-[28px] h-10 md:h-14 overflow-hidden flex items-center justify-center">
     <AnimatePresence mode="wait">
@@ -22,7 +21,6 @@ const Digit = ({ digit }) => (
   </div>
 );
 
-// 🔥 Número más compacto (CLAVE PRO)
 const TimeNumber = ({ value }) => {
   const digits = String(value).padStart(2, '0').split('');
   return (
@@ -34,20 +32,15 @@ const TimeNumber = ({ value }) => {
   );
 };
 
-// 🔥 Unidad refinada
 const TimeUnit = ({ value, label, showColon }) => (
   <div className="flex items-center">
-
     <div className="flex flex-col items-center px-2 md:px-3">
       <TimeNumber value={value} />
-
-      {/* 🔥 Label más elegante y separado */}
       <span className="text-[7px] md:text-[9px] tracking-[0.45em] uppercase text-[#b8934d]/70 mt-3">
         {label}
       </span>
     </div>
 
-    {/* 🔥 Separador elegante */}
     {showColon && (
       <span className="text-xl md:text-3xl text-[#b8934d]/40 font-light mx-1 md:mx-2">
         :
@@ -64,7 +57,7 @@ export default function Countdown() {
     { label: 'Días', value: totalDays },
     { label: 'Horas', value: timeLeft.hours },
     { label: 'Minutos', value: timeLeft.minutes },
-    { label: 'Segundos', value: timeLeft.seconds }
+    { label: 'Segundos', value: timeLeft.seconds },
   ];
 
   if (timeLeft.isExpired) return null;
@@ -72,13 +65,10 @@ export default function Countdown() {
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="container-custom text-center">
-
-        {/* Título */}
         <h2 className="text-lg md:text-xl tracking-[0.5em] uppercase text-[#54582f]/60 font-light mb-12">
           Faltan
         </h2>
 
-        {/* 🔥 Layout refinado */}
         <div className="flex justify-center items-center flex-wrap md:flex-nowrap gap-x-1 md:gap-x-2">
           {units.map((unit, index) => (
             <TimeUnit
@@ -89,7 +79,6 @@ export default function Countdown() {
             />
           ))}
         </div>
-
       </div>
     </section>
   );

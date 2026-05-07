@@ -21,14 +21,13 @@ function App() {
     confetti({
       particleCount: 150,
       spread: 90,
-      origin: { y: 0.4 }
+      origin: { y: 0.4 },
     });
     setIsOpen(true);
   };
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'auto' : 'hidden';
-    document.body.style.backgroundColor = '#ffffff'; // ✅ blanco siempre
   }, [isOpen]);
 
   return (

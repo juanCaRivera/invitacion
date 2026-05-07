@@ -2,16 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ═══════════════════════════════════════════
+   Design Tokens
+   ═══════════════════════════════════════════ */
 :root {
-  --color-bg: #FFFFFF;
+  --color-bg: #ffffff;
   --color-text: #54582f;
   --color-gold: #b8934d;
   --color-gold-light: #cfaa60;
-  /* --font-title: 'Cormorant Garamond', serif;
-  --font-body: 'Montserrat', sans-serif;
-*/
   --font-title: 'Cormorant Garamond', serif;
   --font-body: 'Playfair Display', serif;
+  --font-script: 'Great Vibes', cursive;
 
   /* Spacing Tokens */
   --section-py-mobile: 4rem;
@@ -20,6 +21,9 @@
   --content-max-width: 800px;
 }
 
+/* ═══════════════════════════════════════════
+   Base Reset
+   ═══════════════════════════════════════════ */
 html {
   scroll-behavior: smooth;
 }
@@ -32,51 +36,34 @@ body {
   font-family: var(--font-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Enlaces tipo invitación (mapa): sin subrayado ni color de enlace por defecto */
-a.invite-map-link,
-a.invite-map-link:visited,
-a.invite-map-link:hover,
-a.invite-map-link:active,
-a.invite-map-link:focus,
-a.invite-map-link:focus-visible {
-  text-decoration: none;
-  background-color: transparent;
-  box-shadow: none;
+/* ═══════════════════════════════════════════
+   Typography Hierarchy
+   ═══════════════════════════════════════════ */
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-@keyframes inviteImgLedGold {
-  0%,
-  100% {
-    filter: drop-shadow(0 0 5px rgba(226, 199, 129, 0.78))
-      drop-shadow(0 0 12px rgba(184, 147, 77, 0.4))
-      drop-shadow(0 0 20px rgba(184, 147, 77, 0.18));
-  }
-  50% {
-    filter: drop-shadow(0 0 9px rgba(255, 228, 170, 0.92))
-      drop-shadow(0 0 18px rgba(226, 199, 129, 0.52))
-      drop-shadow(0 0 30px rgba(184, 147, 77, 0.28));
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--color-gold);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3.5rem;
   }
 }
 
-.invite-img-led-trigger {
-  cursor: pointer;
-  outline: none;
-}
-
-.invite-img-led-trigger:hover,
-.invite-img-led-trigger:active,
-.invite-img-led-trigger.invite-img-led-burst {
-  animation: inviteImgLedGold 2.4s ease-in-out infinite;
-}
-
-.invite-img-led-trigger:focus-visible {
-  border-radius: 0.25rem;
-  box-shadow: 0 0 0 2px rgba(184, 147, 77, 0.35);
-}
-
-/* Standard Layout Classes */
+/* ═══════════════════════════════════════════
+   Layout Utilities
+   ═══════════════════════════════════════════ */
 .section-layout {
   padding-top: var(--section-py-mobile);
   padding-bottom: var(--section-py-mobile);
@@ -84,10 +71,9 @@ a.invite-map-link:focus-visible {
   position: relative;
 }
 
-/* Standard Layout Classes */
 .section-layout2 {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
   width: 100%;
   position: relative;
 }
@@ -115,61 +101,6 @@ a.invite-map-link:focus-visible {
   padding-right: 1.5rem;
 }
 
-/* Typography Hierarchy */
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-title);
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--color-gold);
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .section-title {
-    font-size: 3.5rem;
-  }
-}
-
-/* Component Styling */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2.5rem;
-  border-radius: 9999px;
-  background: var(--color-text);
-  color: white;
-  font-family: var(--font-body);
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-}
-
-.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(84, 88, 47, 0.2);
-}
-
-.btn-gold {
-  background: var(--color-gold);
-  color: white;
-}
-
-.btn-gold:hover {
-  background: var(--color-gold-light);
-}
-
-/* Utility alignments */
 .flex-center {
   display: flex;
   align-items: center;
@@ -194,9 +125,154 @@ h4 {
   }
 }
 
-/* Neon & Glow Effects */
+/* ═══════════════════════════════════════════
+   Button System
+   ═══════════════════════════════════════════ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 9999px;
+  background: var(--color-text);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(84, 88, 47, 0.2);
+}
+
+.btn-gold {
+  background: var(--color-gold);
+  color: white;
+}
+
+.btn-gold:hover {
+  background: var(--color-gold-light);
+  box-shadow:
+    0 8px 24px rgba(184, 147, 77, 0.3),
+    0 0 12px rgba(184, 147, 77, 0.15);
+}
+
+/* ═══════════════════════════════════════════
+   Map Link — clean button style
+   ═══════════════════════════════════════════ */
+a.invite-map-link,
+a.invite-map-link:visited,
+a.invite-map-link:hover,
+a.invite-map-link:active,
+a.invite-map-link:focus,
+a.invite-map-link:focus-visible {
+  text-decoration: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* ═══════════════════════════════════════════
+   LED Image Interaction Effect
+   ═══════════════════════════════════════════ */
+@keyframes inviteImgLedGold {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 5px rgba(226, 199, 129, 0.78))
+      drop-shadow(0 0 12px rgba(184, 147, 77, 0.4))
+      drop-shadow(0 0 20px rgba(184, 147, 77, 0.18));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 9px rgba(255, 228, 170, 0.92))
+      drop-shadow(0 0 18px rgba(226, 199, 129, 0.52))
+      drop-shadow(0 0 30px rgba(184, 147, 77, 0.28));
+  }
+}
+
+.invite-img-led-trigger {
+  cursor: pointer;
+  outline: none;
+}
+
+.invite-img-led-trigger:hover,
+.invite-img-led-trigger:active,
+.invite-img-led-trigger.invite-img-led-burst {
+  animation: inviteImgLedGold 2.4s ease-in-out infinite;
+}
+
+.invite-img-led-trigger:focus-visible {
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 2px rgba(184, 147, 77, 0.35);
+}
+
+/* ═══════════════════════════════════════════
+   Hero Section — Keyframes & Classes
+   (Moved from inline <style> in Hero.jsx)
+   ═══════════════════════════════════════════ */
+@keyframes ledGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 6px rgba(255, 255, 255, 0.9),
+      0 0 14px rgba(255, 255, 255, 0.75),
+      0 0 24px rgba(255, 255, 255, 0.55),
+      0 0 36px rgba(255, 255, 255, 0.35);
+  }
+  50% {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 1),
+      0 0 22px rgba(255, 255, 255, 0.9),
+      0 0 36px rgba(255, 255, 255, 0.75),
+      0 0 52px rgba(255, 255, 255, 0.55);
+  }
+}
+
+.hero-led-text {
+  animation: ledGlow 2.2s ease-in-out infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes linePulse {
+  0%, 100% {
+    opacity: 0.88;
+    box-shadow:
+      0 0 14px 2px rgba(214, 190, 130, 0.65),
+      0 0 28px 6px rgba(214, 190, 130, 0.35);
+  }
+  50% {
+    opacity: 1;
+    box-shadow:
+      0 0 24px 4px rgba(226, 199, 129, 0.9),
+      0 0 42px 10px rgba(226, 199, 129, 0.55);
+  }
+}
+
+.hero-panel {
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  border-radius: 1rem;
+  padding: clamp(1.4rem, 2.8vw, 2.4rem) clamp(1.2rem, 4vw, 3.2rem);
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.hero-ornamental-line {
+  animation: linePulse 2.8s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════
+   Glow Utilities
+   ═══════════════════════════════════════════ */
 .neon-white {
-  color: #ffffff !important;
+  color: #ffffff;
   text-shadow:
     0 0 5px rgba(255, 255, 255, 0.8),
     0 0 10px rgba(255, 255, 255, 0.5),
@@ -207,5 +283,16 @@ h4 {
   box-shadow:
     0 0 8px rgba(184, 147, 77, 0.6),
     0 0 15px rgba(184, 147, 77, 0.3);
-  background-color: #b8934d !important;
+  background-color: #b8934d;
+}
+
+/* ═══════════════════════════════════════════
+   Section Ornamental Divider
+   ═══════════════════════════════════════════ */
+.section-divider {
+  width: 6rem;
+  height: 1px;
+  margin: 0 auto;
+  background: linear-gradient(to right, transparent, var(--color-gold-light), transparent);
+  opacity: 0.5;
 }
